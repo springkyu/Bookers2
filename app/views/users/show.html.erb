@@ -1,3 +1,8 @@
+<div class="profile-container">
+  <h3 class="profile-name"><%= @user.name %></h3>
+  <%= image_tag('sample-author1.jpg') %>
+</div>
+
 <h1>Books</h1>
 <% @books.each do |book| %>
   <p>UserImage:<%= book.user.name %></p>
