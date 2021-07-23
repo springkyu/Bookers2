@@ -9,16 +9,18 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-   <body>
+  <body>
     <header class="shadow-sm">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand" href="/"><sapn>Bookers</sapn></a>
+          <nav class="nav navbar-left">
+            <span class="title">Bookers</span>
+          </nav>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
+            <ul class="nav navbar-nav navbar-right">
               <% if user_signed_in? %>
                 <li class="nav-item">
                   <%= link_to books_path(current_user) do %>
@@ -58,7 +60,7 @@
                 </li>
                 <li class="nav-item">
                   <%= link_to new_user_session_path do %>
-                  <i class="fas fa-sign-in-alt"> login</i>
+                  <i class="fas fa-sign-in-alt">login</i>
                   <% end %>
                 </li>
               <% end %>
@@ -67,12 +69,19 @@
         </div>
       </nav>
     </header>
+
     <div class="main">
       <p class="notice"><%= notice %></p>
       <%= yield %>
-      <footer>
-        <p class="text-right"> CopyRight Infratop.inc</p>
-      </footer>
     </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <p class="text-center">CopyRight Infratop.inc</p>
+        </div>
+      </div>
+    </footer>
+
   </body>
 </html>
