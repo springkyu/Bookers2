@@ -1,18 +1,13 @@
 <h1>Book detail</h1>
-<div class="post-body">
-  <div class="user-image">
-  <p><%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
-  <p>User Name<%= @book.user.name %></p>
-  </div>
-  <h2>Title</h2>
-  <p><%= @book.title %></p>
-  <h2>Opinion</h2>
-  <p><%= @book.body %></p>
-
-  <p>
-    <% if @book.user == current_user %>
-      <%= link_to "edit", edit_book_path(@book.id) %></p>
-      <%= link_to "destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？" %></p>
+<table class="table-detail">
+  <tr>
+    <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
+    <td><%= link_to @user.name, user_path(@user) %></td>
+    <td><%= @book.title %></td>
+    <td><%= @book.body %></td>
+    <% if @book.user_id == current_user.id %>
+      <td><%= link_to "Edit", edit_book_path(@book), class:"btn btn-success" %></td>
+      <td><%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-danger" %></td>
     <% end %>
-  </p>
-</div>
+  </tr>
+</table>
