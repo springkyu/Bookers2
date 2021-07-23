@@ -1,7 +1,9 @@
 <h1>Book detail</h1>
 <div class="post-body">
-  <h2>UserImage</h2>
+  <div class="user-image">
   <p><%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %></p>
+  <p>User Name<%= @book.user.name %></p>
+  </div>
   <h2>Title</h2>
   <p><%= @book.title %></p>
   <h2>Opinion</h2>
