@@ -69,19 +69,12 @@
     </header>
 
     <main class="mb-auto">
-    <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <%= yield %>
     </main>
 
-    <footer class="bg-dark text-white pt-5 pb-4">
-      <div class="container">
-        <div class="row no-gutters">
-          <div class="col-md-4"></div>
-          <div class="col-md-8">
-            <h6 class="text-white mt-2 mb-3">CopyRight Infratop.inc</h6>
-            <ul class="p-0 list-unstyled"></ul>
-          </div>
-        </div>
-      </div>
+    <footer>
+      <p class="text-right"> CopyRight Infratop.inc</p>
     </footer>
 
   </body>
