@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h2>User Info</h2>
+      <%= render 'users/error', model: @user %>
       <%= form_with model:@user, local:true do |f| %>
         <div class="user-name">Name</div>
           <%= f.text_field :name %>
