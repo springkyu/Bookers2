@@ -53,8 +53,8 @@
 
       <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
         <div class="row" >
-          <%= f.text_area :comment, class: "col-md-10 comment_content" %><br ?
-          <%= f.submit "送信", class: "btn btn-primary col-md-2" %>
+          <%= f.text_area :comment, class: "col-md-12 comment_content" %><br >
+          <%= f.submit "送信", class: "btn col-md-2" %>
         </div>
       <% end %>
     </div>
