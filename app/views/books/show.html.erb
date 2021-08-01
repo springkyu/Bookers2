@@ -39,9 +39,11 @@
           <% end %>
         </tr>
         <tr>
-          <%= form_with(model:[@book, @book_comment]), local:true do |f| %>
-            <%= f.text_area :comment %>
-            <%= f.submit "送信" %>
+          <td>
+            <%= form_with(model:[@book, @book_comment]), local:true do |f| %>
+              <%= f.text_area :comment %>
+              <%= f.submit "送信" %>
+          </td>
         </tr>
       </table>
     </div>
