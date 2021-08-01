@@ -29,15 +29,19 @@
           <% end %>
           <td>コメント数：<%= @book.book_comments.count %>
             <% @book.book_comments.each do |book_comment| %>
-              <%= attachment_image_tag @user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg"　%>
+              <%= attachment_image_tag book_comment.user, :profile_image, :fill, 30, 30, fallback: "no_image.jpg"　%>
               <%= book_comment.user.name %>
             <% end %>
-            
           </td>
           <% if @book.user_id == current_user.id %>
             <td><%= link_to "Edit", edit_book_path(@book), class:"btn btn-sm btn-success" %></td>
             <td><%= link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-sm btn-danger" %></td>
           <% end %>
+        </tr>
+        <tr>
+          <%= form_with(model:[@book, @book_comment]), local:true do |f| %>
+            <%= f.text_area :comment %>
+            <%= f.submit "送信" %>
         </tr>
       </table>
     </div>
