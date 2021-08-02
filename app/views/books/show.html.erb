@@ -52,10 +52,10 @@
 
       <%= form_with(model:[@book, @book_comment], local: true) do |f| %>
         <div class="row" >
-          <%= f.text_area :comment, class: "col-md-12 comment_content" %><br >
+          <%= f.text_area :comment, class: "col-md-11 comment_content" %><br >
         </div>
         <div class="actions">
-          <%= f.submit '送信', class: "btn mt-4" %>
+          <%= f.submit '送信', class: "btn btn-outline-dark mt-4" %>
         </div>
       <% end %>
     </div>
